@@ -13,7 +13,7 @@
 
     <!-- 1. Load Pyodide -->
     <!-- <script src="https://cdn.jsdelivr.net/pyodide/v2.x/full/pyodide.js"></script> -->
-    <script src="https://cdn.jsdelivr.net/pyodide/v314.0.6/full/pyodide.js"></script>
+    <!--<script src="https://cdn.jsdelivr.net/pyodide/v314.0.6/full/pyodide.js"></script>
     <script>
         // Your main application logic will go here
         async function setupPythonEnvironment() {
@@ -27,9 +27,10 @@
 
         // Call this function when the PWA loads
         setupPythonEnvironment();
-    </script>
+    </script>-->
     
     <script>
+        // Register the service worker for PWA compliance
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('sw.js')
             .then(()=> {
@@ -38,6 +39,10 @@
                 console.error('Service Worker registration failed:', error);
             });
         }
+        // Initialize the Web Worker for Python execution
+        const pythonWorker = new Worker('py-worker.js');
+
+        
     </script>
 
     <script src="the_glue.js"></script> <!-- Your custom logic -->

