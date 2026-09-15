@@ -10,6 +10,24 @@
     <input type="text" id="input_data" placeholder="Enter data/commands...">
     <button onclick="executeCommand()">Execute Shell Command</button>
     <pre id="output_log">Shell output will appear here.</pre>
+
+    <!-- 1. Load Pyodide -->
+    <!-- <script src="https://cdn.jsdelivr.net/pyodide/v2.x/full/pyodide.js"></script> -->
+    <!--<script src="https://cdn.jsdelivr.net/pyodide/v314.0.6/full/pyodide.js"></script>
+    <script>
+        // Your main application logic will go here
+        async function setupPythonEnvironment() {
+            // 2. Initialize Pyodide
+            let pyodide = await loadPyodide();
+
+            // 3. Expose Pyodide's scope to JavaScript for easier calling
+            window.pyodide = pyodide; 
+            console.log("Python interpreter loaded successfully.");
+        }
+
+        // Call this function when the PWA loads
+        setupPythonEnvironment();
+    </script>-->
     
     <script>
         // Register the service worker for PWA compliance

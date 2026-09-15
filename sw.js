@@ -4,6 +4,9 @@ const urlsToCache = [
     '/index.html',
     '/manifest.json',
     '/py-worker.js',
+    '/node_modules/pyodide/pyodide.js',
+    '/node_modules/pyodide/pyodide.asm.wasm',
+    '/node_modules/pyodide/pyodide.asm.data',
 ];
 
 // 1. INSTALL: Pre-cache static assets & take over immediately
