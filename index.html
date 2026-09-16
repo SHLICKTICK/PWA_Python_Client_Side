@@ -8,23 +8,23 @@
 <body>
     <h1>Python Shell Interface</h1>
     <input type="text" id="input_data" placeholder="Enter data/commands...">
-    <button onclick="executeCommand()">Execute Shell Command</button>
-    <pre id="output_log">Shell output will appear here.</pre>
-    
+    <button id="run_btn" onclick="executeCommand()">Execute Shell Command</button>
+    <pre id="output_log">Loading Python runtime, please wait...</pre>
+
     <script>
         // Register the service worker for PWA compliance
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('sw.js')
-            .then(()=> {
+            .then(() => {
                 console.log('Service Worker registered successfully.');
             }).catch((error) => {
                 console.error('Service Worker registration failed:', error);
             });
         }
-        // Initialize the Web Worker for Python execution
-        const pythonWorker = new Worker('py-worker.js');
-
-        
+        // NOTE: the Worker is created exactly once, inside erwe.js.
+        // Do NOT also create it here — a second `new Worker('py-worker.js')`
+        // in this scope caused a duplicate-declaration crash and split
+        // the app across two disconnected worker instances.
     </script>
 
     <script src="the_glue.js"></script> <!-- Your custom logic -->

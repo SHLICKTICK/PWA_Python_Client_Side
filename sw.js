@@ -1,12 +1,21 @@
-const CACHE_NAME = 'Micky-cache-v1';
+const CACHE_NAME = 'Micky-cache-v3';
 const urlsToCache = [
     '/',
     '/index.html',
     '/manifest.json',
+    '/the_glue.js',
     '/py-worker.js',
-    '/node_modules/pyodide/pyodide.js',
-    '/node_modules/pyodide/pyodide.asm.wasm',
-    '/node_modules/pyodide/pyodide.asm.data',
+    '/icons/icon-192x192.png',
+    '/icons/icon-512x512.png',
+    // Self-hosted Pyodide runtime (copied from node_modules/pyodide/ into
+    // a servable /pyodide/ folder — see py-worker.js for setup notes).
+    // These are real, verified filenames from the current npm package;
+    // older tutorials reference 'pyodide.asm.data', which no longer exists.
+    '/pyodide/pyodide.mjs',
+    '/pyodide/pyodide.asm.mjs',
+    '/pyodide/pyodide.asm.wasm',
+    '/pyodide/pyodide-lock.json',
+    '/pyodide/python_stdlib.zip',
 ];
 
 // 1. INSTALL: Pre-cache static assets & take over immediately

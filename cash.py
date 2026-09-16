@@ -26,7 +26,7 @@ def start_shell():
             print(data.decode().strip())
 
             # Send data (if this script were taking local input)
-            # s.sendall(input_data_bytes) 
+            s.sendall(input_data_bytes) 
 
         s.close()
 
